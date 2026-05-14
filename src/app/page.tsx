@@ -16,7 +16,7 @@ export default function HomePage() {
         <StoryBar />
       </div>
 
-      <section className="pb-24 no-scrollbar">
+      <section className="pb-20 no-scrollbar">
         {posts.map((post) => (
           <PostCard
             key={post.id}
