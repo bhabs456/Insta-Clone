@@ -2,8 +2,8 @@ import { Plus, Heart } from "lucide-react";
 
 export default function Mnavbar() {
   return (
-    <header className="sticky bg-white top-0 z-50 text-black">
-      <div className="px-4 pt-2 flex justify-between ">
+    <header className="sticky bg-white left-0 right-0 top-0 z-50 text-black">
+      <div className="h-11 px-4 flex justify-between items-center">
 
         {/* Logo */}
         <div className="">

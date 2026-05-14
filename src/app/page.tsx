@@ -24,7 +24,9 @@ export default function HomePage() {
             profileImage={post.profileImage}
             postImage={post.postImage}
             likes={post.likes}
+            comments={post.comments}
             caption={post.caption}
+            time={post.time}
           />
         ))}
       </section>
