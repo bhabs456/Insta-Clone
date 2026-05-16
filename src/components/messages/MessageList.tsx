@@ -1,6 +1,6 @@
 import { messages } from "@/src/data/messages";
 import MessageItem from "./MessageItem";
-import NotesBar from "@/src/components/messages/NoteBar";
+// import NotesBar from "@/src/components/messages/NoteBar";
 
 export default function MessagesList() {
   return (
