@@ -19,7 +19,7 @@ export default function HomePage() {
         <StoryBar />
       </div>
 
-      <section className="pb-20 no-scrollbar mx-auto max-w-md">
+      <section className="pb-12 md:pb-0 no-scrollbar mx-auto max-w-md">
         {posts.map((post) => (
           <PostCard
             key={post.id}

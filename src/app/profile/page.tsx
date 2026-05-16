@@ -10,10 +10,10 @@ export default function ProfilePage() {
 
       <div className="mx-auto flex h-full max-w-md flex-col">
 
-     
-        <ProfileNav />
+        <div className=""><ProfileNav /></div>
+        
 
-        <ProfileList />
+        <div className="flex-1 overflow-y-auto no-scrollbar"><ProfileList /></div>
 
       </div>
 

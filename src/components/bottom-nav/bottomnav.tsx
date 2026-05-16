@@ -11,19 +11,20 @@ export default function BottomNav() {
 
   return (
     <nav
-      className="fixed bg-white bottom-0 left-0 right-0 border-t border-stone-200 z-50 md:top-0
+      className="fixed h-12 bg-white bottom-0 left-0 right-0 border-t border-stone-200 z-50 md:top-0
       md:bottom-0
       md:right-auto
       md:w-20
+      md:h-screen
       md:border-t-0
-      md:border-r"
-    >
+      md:border-r
+      md:hover:w-[150px]">
       <div className="
         flex
         items-center
         justify-evenly
         md:flex-col
-        md:items-center
+        md:items-cente
         md:justify-center
         md:h-full
         md:gap-6

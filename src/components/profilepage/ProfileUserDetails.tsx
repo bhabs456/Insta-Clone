@@ -2,7 +2,7 @@ export default function ProfileUserDetails() {
   return (
     <header className="mt-4 mb-2">
       {/* {Profile Avatar and Username } */}
-      <div className="flex items-center ml-4 w-full">
+      <div className="flex items-center mx-4 w-full">
 
         <div className="flex flex-col justify-center ">
 
@@ -37,9 +37,24 @@ export default function ProfileUserDetails() {
         </div>
       </div>
 
-      <div className=""></div>
+      {/* Name and Bio */}
+      <div className="flex mx-4 flex-col">
+        {/* Name */}
+        <div className="Name text-sm font-bold">
+          Tony Stark 
+        </div>
 
-      <div className=""></div>
+        {/* Bio */}
+        <div className="Bio text-sm">
+          You can take away my house,<br /> all my tricks and toys,<br /> but one thing you can't take away: <br /> I am Iron Man.
+        </div>
+      </div>
+
+      {/* Profile and Archive Button */}
+      <div className="Button p-3 w-full flex gap-2">
+        <a className="h-8 cursor-pointer flex justify-center items-center text-sm bg-gray-100 w-full text-center text-black rounded-md">Edit Profile</a>
+        <a className="h-8 cursor-pointer flex justify-center items-center text-sm bg-gray-100 w-full text-center text-black rounded-md">View Archive</a>
+      </div>
     </header>
   );
 }
