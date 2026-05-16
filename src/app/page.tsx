@@ -6,17 +6,20 @@ import { posts } from "@/src/data/posts";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen text-black">
+    <main className="min-h-screen  text-black">
       {/* Mobile Container */}
 
       {/* Navbar */}
-      <Mnavbar />
+      <div className="">  
+        <Mnavbar />
+      </div>
+    
       <div className="mx-auto max-w-md">
         {/* Stories */}
         <StoryBar />
       </div>
 
-      <section className="pb-20 no-scrollbar">
+      <section className="pb-20 no-scrollbar mx-auto max-w-md">
         {posts.map((post) => (
           <PostCard
             key={post.id}
@@ -32,7 +35,7 @@ export default function HomePage() {
       </section>
 
       {/* Bottom Navigation */}
-      <BottomNav />
+      <div className=""><BottomNav /></div>
     </main>
   );
 }

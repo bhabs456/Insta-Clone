@@ -1,52 +1,71 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function BottomNav() {
-  const [homePage, setHomePage] = useState(false);
+  const pathname = usePathname();
+
+  const isProfilePage = pathname === "/profile";
+  const isHomePage = pathname === "/";
 
   return (
-    <nav className="fixed bg-white bottom-0 left-0 right-0 border-t border-stone-200 z-50">
-      <div className="mx-auto flex max-w-md items-center justify-evenly ">
-        <div
-          className="p-3 cursor-pointer"
-          onClick={() => setHomePage(!homePage)}
-        >
-          {homePage ? (
-            <svg
-              aria-label="Home"
-              fill="currentColor"
-              height="24"
-              role="img"
-              viewBox="0 0 24 24"
-              width="24"
-              className="text-black"
-            >
-              <title>Home</title>
+    <nav
+      className="fixed bg-white bottom-0 left-0 right-0 border-t border-stone-200 z-50 md:top-0
+      md:bottom-0
+      md:right-auto
+      md:w-20
+      md:border-t-0
+      md:border-r"
+    >
+      <div className="
+        flex
+        items-center
+        justify-evenly
+        md:flex-col
+        md:items-center
+        md:justify-center
+        md:h-full
+        md:gap-6
+        md:pt-6">
+          
+        <Link href="/">
+          <div className="Home p-3 cursor-pointer">
+            {isHomePage ? (
+              <svg
+                aria-label="Home"
+                fill="currentColor"
+                height="24"
+                role="img"
+                viewBox="0 0 24 24"
+                width="24"
+                className="text-black"
+              >
+                <title>Home</title>
 
-              <path d="m21.762 8.786-7-6.68a3.994 3.994 0 0 0-5.524 0l-7 6.681A4.017 4.017 0 0 0 1 11.68V19c0 2.206 1.794 4 4 4h3.005a1 1 0 0 0 1-1v-7.003a2.997 2.997 0 0 1 5.994 0V22a1 1 0 0 0 1 1H19c2.206 0 4-1.794 4-4v-7.32a4.02 4.02 0 0 0-1.238-2.894Z"></path>
-            </svg>
-          ) : (
-            <svg
-              aria-label="Home"
-              fill="none"
-              height="24"
-              role="img"
-              viewBox="0 0 24 24"
-              width="24"
-              className="text-black"
-            >
-              <title>Home</title>
+                <path d="m21.762 8.786-7-6.68a3.994 3.994 0 0 0-5.524 0l-7 6.681A4.017 4.017 0 0 0 1 11.68V19c0 2.206 1.794 4 4 4h3.005a1 1 0 0 0 1-1v-7.003a2.997 2.997 0 0 1 5.994 0V22a1 1 0 0 0 1 1H19c2.206 0 4-1.794 4-4v-7.32a4.02 4.02 0 0 0-1.238-2.894Z"></path>
+              </svg>
+            ) : (
+              <svg
+                aria-label="Home"
+                fill="none"
+                height="24"
+                role="img"
+                viewBox="0 0 24 24"
+                width="24"
+                className="text-black"
+              >
+                <title>Home</title>
 
-              <path
-                d="m21.762 8.786-7-6.68C13.266.68 10.734.68 9.238 2.106l-7 6.681A4.017 4.017 0 0 0 1 11.68V20c0 1.654 1.346 3 3 3h5.005a1 1 0 0 0 1-1L10 15c0-1.103.897-2 2-2 1.09 0 1.98.877 2 1.962L13.999 22a1 1 0 0 0 1 1H20c1.654 0 3-1.346 3-3v-8.32a4.021 4.021 0 0 0-1.238-2.894Z"
-                stroke="currentColor"
-                strokeWidth="2"
-              ></path>
-            </svg>
-          )}
-        </div>
+                <path
+                  d="m21.762 8.786-7-6.68C13.266.68 10.734.68 9.238 2.106l-7 6.681A4.017 4.017 0 0 0 1 11.68V20c0 1.654 1.346 3 3 3h5.005a1 1 0 0 0 1-1L10 15c0-1.103.897-2 2-2 1.09 0 1.98.877 2 1.962L13.999 22a1 1 0 0 0 1 1H20c1.654 0 3-1.346 3-3v-8.32a4.021 4.021 0 0 0-1.238-2.894Z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                ></path>
+              </svg>
+            )}
+          </div>
+        </Link>
 
         <div className="Search p-3">
           <svg
@@ -131,7 +150,7 @@ export default function BottomNav() {
         </Link>
 
         <Link href="/profile">
-          <div className="Profile p-3">
+          <div className="Profile p-3 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24px"
@@ -145,6 +164,7 @@ export default function BottomNav() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                fill={isProfilePage ? "black" : "none"}
               />
               <path
                 d="M18.74 19.3801C16.96 21.0101 14.6 22.0001 12 22.0001C9.40001 22.0001 7.04001 21.0101 5.26001 19.3801C5.36001 18.4401 5.96001 17.5201 7.03001 16.8001C9.77001 14.9801 14.25 14.9801 16.97 16.8001C18.04 17.5201 18.64 18.4401 18.74 19.3801Z"
@@ -152,6 +172,7 @@ export default function BottomNav() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                fill={isProfilePage ? "black" : "none"}
               />
               <path
                 d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"

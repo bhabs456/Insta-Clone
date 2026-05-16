@@ -2,7 +2,7 @@ import { Search } from "lucide-react";
 
 export default function SearchBar() {
   return (
-    <div className="px-4 h-10">
+    <div className="px-4 h-10 mb-2">
 
       <div className="flex h-full items-center rounded-full bg-zinc-100 px-4">
 
